@@ -2,5 +2,7 @@
   "name": "meetingHandler",
   "app_id": "ffd0b614",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }

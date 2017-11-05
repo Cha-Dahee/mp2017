@@ -1,3 +1,10 @@
 page-home {
+    ion-content {
+        text-align: center; 
+    }
 
+    p {
+        //text-align: right;
+        outline: #488aff solid 3px;
+    }
 }
