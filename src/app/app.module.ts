@@ -11,6 +11,8 @@ import { EditMeetingRulePage} from '../pages/edit-meeting-rule/edit-meeting-rule
 
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {Geolocation} from '@ionic-native/geolocation';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBaK_t5ngY0MZlIQW42ygjCCGDFJL--Er0",
@@ -44,7 +46,8 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Geolocation
   ]
 })
 export class AppModule {}

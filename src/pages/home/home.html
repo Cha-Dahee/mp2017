@@ -10,10 +10,25 @@
 </ion-header>
 
 <ion-content padding>
-  <p>상상랩 7, 월 10시</p>
+<p *ngFor= "let mInfo of meetingInfo |async">
+    {{mInfo.place}}<br>
+    {{mInfo.dateTime}}
+</p>
   <ion-list>
-    <ion-item *ngFor ="let member of members |async">{{member.name}}</ion-item>
-  </ion-list>
+    <ion-item *ngFor ="let member of members |async" (click)="attendanceCheck(member)" >
+      
+    <!--<ion-avatar item-start *ngIf="member.LanLon.lan==0.1&&member.LanLon.lon==0.5"></ion-avatar>-->
+        <ion-avatar item-start *ngIf="member.LanLon.lan==0.1&&member.LanLon.lon==0.5">
+          <img src ="../../assets/imgs/emptyCircle.png">      
+        </ion-avatar>
+        <ion-avatar item-start *ngIf="member.LanLon.lan==0.2&&member.LanLon.lon==0.5">
+            <img src ="../../assets/imgs/smile.png">      
+          </ion-avatar>
+      {{member.name}}
+    
+      
+    </ion-item>
+    </ion-list>
   <button ion-button color="primary" (click)="goEditMeetingInfoPage()">장소,시간 수정</button>
   <button ion-button color="primary" (click)="goEditMeetingRulePage()">규칙 설정</button>
   <button ion-button color="primary" (click)="removeMember()">멤버 삭제</button>
